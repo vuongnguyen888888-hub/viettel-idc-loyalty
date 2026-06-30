@@ -46,7 +46,7 @@ export default function HeroAccount({
           {/* Headline & Sub-headline */}
           <div className="flex flex-col space-y-3 w-full">
             <h1 className="text-3xl md:text-4xl font-black tracking-tight font-sarabun text-white">
-              Trọn Vẹn Tri Ân
+              Viettel IDC loyalty-Trọn vẹn tri ân
             </h1>
             <p className="text-white/90 text-sm md:text-base leading-relaxed">
               Thay lời cảm ơn sâu sắc từ Viettel IDC gửi tới Quý khách hàng thân thiết. Hãy khám phá ngay kho quà tặng dành riêng cho bạn.

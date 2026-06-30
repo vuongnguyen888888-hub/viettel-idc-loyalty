@@ -101,9 +101,9 @@ export default function Filters({
     { value: "Du lịch - Khách sạn", label: "Du lịch" },
     { value: "Vui chơi - Giải trí", label: "Giải trí" },
     { value: "Sức khỏe và Làm đẹp", label: "Làm đẹp" },
-    { value: "Quà tặng - Dịch vụ khác", label: "Khác" },
     { value: "Khóa học - Đào tạo", label: "Đào tạo" },
     { value: "Thẻ tiện ích", label: "Thẻ tiện ích" },
+    { value: "Quà tặng - Dịch vụ khác", label: "Khác" },
   ];
 
   const locationOptions = [
