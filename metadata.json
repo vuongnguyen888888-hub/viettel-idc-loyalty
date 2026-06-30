@@ -1,0 +1,6 @@
+{
+  "name": "Viettel IDC Loyalty Gift List",
+  "description": "Danh sách quà tặng / Loyalty Gift List portal for Viettel IDC.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
