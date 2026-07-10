@@ -125,13 +125,13 @@ export default function Filters({
   const isPriceActive = filters.priceRange !== "Tất cả";
 
   return (
-    <div className="w-full h-full bg-white border border-gray-100 p-5 rounded-2xl font-sans text-gray-700 transition-all duration-300 flex flex-col justify-between">
+    <div className="w-full bg-white border border-gray-200 p-5 rounded-2xl font-sans text-gray-700 transition-all duration-300 flex flex-col justify-between">
       
       {/* Top minimal header line */}
-      <div className="flex items-center justify-between border-b border-gray-50 pb-3 mb-4">
+      <div className="flex items-center justify-between border-b border-gray-100 pb-3 mb-4">
         <div className="flex items-center space-x-2 text-gray-800">
           <Filter size={15} className="text-[#EE0033]" />
-          <span className="text-xs font-bold uppercase tracking-wider">Bộ lọc ưu đãi</span>
+          <span className="text-xs font-bold uppercase tracking-wider">Danh mục ưu đãi</span>
         </div>
         <button
           onClick={onResetFilters}
@@ -142,35 +142,10 @@ export default function Filters({
         </button>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-5">
         
-        {/* Row 2: Minimalist Category Filter */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-          <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider min-w-[100px]">
-            Danh mục:
-          </span>
-          <div className="flex flex-wrap gap-1.5">
-            {categories.map((cat) => {
-              const isActive = filters.category === cat.value;
-              return (
-                <button
-                  key={cat.value}
-                  onClick={() => onFilterChange({ category: cat.value })}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 cursor-pointer ${
-                    isActive
-                      ? "bg-red-50 text-[#EE0033] font-bold"
-                      : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Row 3: Simple, Minimal Form Controls */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 border-t border-gray-50 pt-3">
+        {/* Row 3: Simple, Minimal Form Controls (Vertical Stack) */}
+        <div className="flex flex-col gap-3">
           
           {/* Tìm kiếm */}
           <div className="relative">
@@ -209,6 +184,37 @@ export default function Filters({
           />
 
         </div>
+
+        {/* Row 2: Minimalist Category Filter (Vertical list) */}
+        <div className="flex flex-col gap-2 border-t border-gray-100 pt-4">
+          <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+            Danh mục ưu đãi
+          </span>
+          <div className="flex flex-col gap-1">
+            {categories.map((cat) => {
+              const isActive = filters.category === cat.value;
+              return (
+                <button
+                  key={cat.value}
+                  onClick={() => onFilterChange({ category: cat.value })}
+                  className={`w-full px-3 py-2 rounded-lg text-xs font-medium text-left transition-all duration-200 cursor-pointer flex items-center justify-between group ${
+                    isActive
+                      ? "bg-red-50 text-[#EE0033] font-bold"
+                      : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                  }`}
+                >
+                  <span>{cat.label}</span>
+                  {isActive ? (
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#EE0033]" />
+                  ) : (
+                    <span className="w-1.5 h-1.5 rounded-full bg-transparent group-hover:bg-gray-300 transition-colors" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
       </div>
     </div>
   );

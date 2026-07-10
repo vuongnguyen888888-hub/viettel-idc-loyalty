@@ -29,8 +29,8 @@ export default function HeroAccount({
 
   return (
     <section 
-      className="w-full bg-cover bg-center bg-no-repeat text-white py-12 md:py-16 min-h-[300px] flex items-center relative overflow-hidden font-sans shadow-inner"
-      style={{ backgroundImage: "url('https://res.cloudinary.com/dpyizq1m2/image/upload/v1782727395/sxsxs_uw4gsq.png')" }}
+      className="w-full bg-cover bg-center bg-no-repeat text-white py-10 md:py-12 min-h-[350px] flex items-center relative overflow-hidden font-sans shadow-inner"
+      style={{ backgroundImage: "url('https://res.cloudinary.com/dpyizq1m2/image/upload/v1783649840/cc_zzkvme.webp')" }}
     >
       {/* Dynamic abstract decorative elements for a modern premium look */}
       <div className="absolute -right-12 -bottom-12 w-96 h-96 rounded-full bg-white/5 blur-3xl pointer-events-none animate-pulse duration-[8s]"></div>
@@ -40,16 +40,16 @@ export default function HeroAccount({
       {/* Decorative tech grid lines */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
-      <div className="max-w-[1180px] w-full mx-auto px-4 relative z-10">
+      <div className="max-w-[1180px] w-full mx-auto px-4 relative z-10 -translate-y-6 md:-translate-y-8">
         <div className="max-w-2xl text-left">
           
           {/* Headline & Sub-headline */}
           <div className="flex flex-col space-y-3 w-full">
-            <h1 className="text-3xl md:text-4xl font-black tracking-tight font-sarabun text-white">
+            <h1 className="text-3xl md:text-4xl font-black tracking-tight font-sarabun text-[#EE0033]">
               Viettel IDC loyalty-Trọn vẹn tri ân
             </h1>
-            <p className="text-white/90 text-sm md:text-base leading-relaxed">
-              Thay lời cảm ơn sâu sắc từ Viettel IDC gửi tới Quý khách hàng thân thiết. Hãy khám phá ngay kho quà tặng dành riêng cho bạn.
+            <p className="text-black text-sm md:text-base leading-relaxed font-semibold">
+              Thay lời cảm ơn sâu sắc từ Viettel IDC gửi tới Quý khách hàng thân thiết. <br />Hãy khám phá ngay kho quà tặng dành riêng cho bạn.
             </p>
           </div>
 
