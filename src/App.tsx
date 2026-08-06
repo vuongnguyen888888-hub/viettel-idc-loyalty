@@ -11,7 +11,7 @@ import ModalExchange from "./components/ModalExchange";
 import ModalDeposit from "./components/ModalDeposit";
 import { initialUserProfile, sampleGifts } from "./data";
 import { GiftItem, UserProfile, FilterState } from "./types";
-import { RotateCcw, AlertTriangle, Award, Wallet, PlusCircle, Sparkles, User, Gift } from "lucide-react";
+import { RotateCcw, AlertTriangle, Award, Wallet, PlusCircle, Sparkles, User, Gift, Flame } from "lucide-react";
 
 export default function App() {
   // 1. User Profile state (with persistence during session)
@@ -202,76 +202,7 @@ export default function App() {
         onScrollToGifts={scrollToGifts}
       />
 
-      {/* Horizontal Loyalty Card Section (Under Hero) */}
-      <div className="max-w-[1180px] w-full mx-auto px-4 mt-2">
-        <div className="bg-white border border-gray-200 rounded-xl p-3.5 md:py-3 md:px-5 flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden group">
-          {/* Subtle decorative glow */}
-          <div className="absolute top-0 right-0 w-24 h-24 bg-[#EE0033]/5 rounded-full blur-xl pointer-events-none group-hover:bg-[#EE0033]/10 transition-all duration-500"></div>
-          
-          {/* Section 1: Customer Profile & Tier */}
-          <div className="flex items-center space-x-3 w-full md:w-auto">
-            <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#EE0033] to-[#FF3E6C] flex items-center justify-center text-white shadow-md shadow-red-500/10 shrink-0">
-              <User size={16} />
-            </div>
-            <div className="space-y-0.5">
-              <div className="flex items-center gap-1.5">
-                <span className="font-bold text-gray-900 text-xs md:text-sm leading-none">{userProfile.name}</span>
-                <span className="bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-600 text-white text-[8px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded shadow-sm flex items-center space-x-1">
-                  <Award size={8} />
-                  <span>KIM CƯƠNG</span>
-                </span>
-              </div>
-              <p className="text-[11px] text-gray-500 font-medium leading-none">
-                <span>{userProfile.email}</span>
-              </p>
-            </div>
-          </div>
 
-          {/* Vertical divider on desktop */}
-          <div className="hidden md:block h-8 w-px bg-gray-100"></div>
-
-          {/* Section 2: Main Loyalty Points display */}
-          <div className="bg-[#EE0033]/5 border border-red-100/30 px-3 py-2 rounded-xl flex items-center justify-between w-full md:w-auto md:min-w-[350px]">
-            <div className="flex items-center space-x-2.5">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#EE0033] to-[#FF3E6C] flex items-center justify-center text-white shadow-md shadow-red-500/10 shrink-0">
-                <Gift size={16} />
-              </div>
-              <div className="space-y-0.5">
-                <span className="text-[9px] text-gray-400 uppercase font-black tracking-wider block">Điểm đổi quà Loyalty</span>
-                <span className="text-sm font-black text-[#EE0033] font-sarabun leading-none block">
-                  {userProfile.points.toLocaleString("vi-VN")}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Vertical divider on desktop */}
-          <div className="hidden md:block h-8 w-px bg-gray-100"></div>
-
-          {/* Section 3: Account Wallet Balance with top-up button */}
-          <div className="flex items-center justify-between md:justify-start space-x-3 w-full md:w-auto">
-            <div className="flex items-center space-x-2.5">
-              <div className="p-2 bg-red-50 text-[#EE0033] rounded-lg shrink-0">
-                <Wallet size={14} />
-              </div>
-              <div className="space-y-0.5">
-                <span className="text-[9px] text-gray-400 uppercase font-bold tracking-wider block">Số dư ví chính</span>
-                <span className="text-xs font-black text-gray-800 font-sarabun block">
-                  {userProfile.mainBalance.toLocaleString("vi-VN")} đ
-                </span>
-              </div>
-            </div>
-            <button
-              onClick={() => setShowDepositModal(true)}
-              className="bg-gray-900 hover:bg-[#EE0033] text-white text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded-lg transition-all cursor-pointer flex items-center space-x-1 shrink-0 shadow-sm"
-            >
-              <PlusCircle size={10} />
-              <span>Nạp tiền</span>
-            </button>
-          </div>
-
-        </div>
-      </div>
 
       {/* Main Content Area Container */}
       <main 
@@ -294,15 +225,37 @@ export default function App() {
                   filters={filters}
                   onFilterChange={handleFilterChange}
                   onResetFilters={handleResetFilters}
+                  userProfile={userProfile}
                 />
               </div>
 
               {/* Right Side: Title, Gift cards, Pagination */}
               <div className="lg:col-span-3 space-y-6">
 
+                {/* Hot banner above the dining voucher cards */}
+                {(filters.category === "Tất cả" || filters.category === "Ăn uống") && (
+                  <div className="bg-gradient-to-r from-[#EE0033] to-amber-500 rounded-2xl py-3 px-4 md:py-3.5 md:px-5 text-white shadow-md relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-3 border border-red-500/20">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_60%)] pointer-events-none"></div>
+                    <div className="absolute -left-10 -bottom-10 w-40 h-40 rounded-full bg-yellow-400/10 blur-2xl pointer-events-none"></div>
+                    
+                    <div className="space-y-1 text-center md:text-left relative z-10 flex-1">
+                      <div className="inline-flex items-center space-x-1.5 bg-yellow-400/25 backdrop-blur-md text-yellow-100 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider border border-yellow-400/30">
+                        <Flame size={10} className="fill-current text-yellow-300 animate-pulse" />
+                        <span>SIÊU ƯU ĐÃI HOT</span>
+                      </div>
+                      <h3 className="text-sm md:text-base font-black tracking-tight leading-tight">
+                        Đại Tiệc Ẩm Thực Cuối Tuần - Đổi Điểm Thả Ga!
+                      </h3>
+                      <p className="text-[11px] text-white/90 leading-normal font-medium">
+                        Sở hữu E-Coupon Niuben Hotpot tặng chả sò điệp cao cấp & Mr.Eco Healthy Food giảm ngay 15% hóa đơn. Đổi quà ngay chỉ từ 1.200 điểm Loyalty!
+                      </p>
+                    </div>
+                  </div>
+                )}
+
                 {/* Gift Cards Grid Section */}
                 {visibleGifts.length > 0 ? (
-                  <div className="space-y-8">
+                  <div id="gift-grid-section" className="space-y-8">
                     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                       {visibleGifts.map((gift) => (
                         <GiftCard

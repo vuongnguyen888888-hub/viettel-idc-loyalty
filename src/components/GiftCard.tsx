@@ -1,5 +1,5 @@
 import React from "react";
-import { Award, MapPin, Sparkles } from "lucide-react";
+import { Award, MapPin, Sparkles, Flame } from "lucide-react";
 import { GiftItem } from "../types";
 
 interface GiftCardProps {
@@ -27,6 +27,12 @@ export default function GiftCard({ gift, onRedeem, onViewDetail }: GiftCardProps
         {/* Brand overlay panel */}
         <div className="absolute top-3 left-3 bg-gray-900/80 backdrop-blur-md text-white text-[9px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider shadow-sm">
           {gift.brand}
+        </div>
+
+        {/* "Hot" fire badge on the top right */}
+        <div className="absolute top-3 right-3 bg-gradient-to-r from-red-600 to-[#EE0033] text-white text-[9px] font-black px-2 py-1 rounded-md flex items-center space-x-1 shadow-md z-10">
+          <Flame size={10} className="fill-current animate-bounce" />
+          <span>HOT</span>
         </div>
 
         {/* Location badge on image */}
