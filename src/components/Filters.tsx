@@ -235,7 +235,6 @@ export default function Filters({
                 <div className="flex items-center text-gray-600">
                   <span className="text-[11px] font-bold uppercase tracking-wider">Điểm đổi quà Loyalty</span>
                 </div>
-                <Sparkles size={14} className="text-amber-500 animate-pulse shrink-0" />
               </div>
               <div className="mt-2 flex items-baseline space-x-1">
                 <span className="text-2xl font-black text-[#EE0033] tracking-tight">
