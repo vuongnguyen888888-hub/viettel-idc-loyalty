@@ -244,10 +244,10 @@ export default function App() {
                         <span>SIÊU ƯU ĐÃI HOT</span>
                       </div>
                       <h3 className="text-sm md:text-base font-black tracking-tight leading-tight">
-                        Đại Tiệc Ẩm Thực Cuối Tuần - Đổi Điểm Thả Ga!
+                        Khám Phá Các Chương Trình Ưu Đãi Hot
                       </h3>
                       <p className="text-[11px] text-white/90 leading-normal font-medium">
-                        Sở hữu E-Coupon Niuben Hotpot tặng chả sò điệp cao cấp & Mr.Eco Healthy Food giảm ngay 15% hóa đơn. Đổi quà ngay chỉ từ 1.200 điểm Loyalty!
+                        Tổng hợp các E-Coupon & Voucher đặc quyền dành riêng cho khách hàng thân thiết Viettel IDC. Đổi điểm nhận ngay hàng ngàn ưu đãi hấp dẫn!
                       </p>
                     </div>
                   </div>

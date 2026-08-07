@@ -192,7 +192,7 @@ export default function Filters({
           <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">
             Danh mục ưu đãi
           </span>
-          <div className="flex flex-col gap-1 max-h-[254px] overflow-y-auto pr-1">
+          <div className="flex flex-col gap-1 pr-1">
             {categories.map((cat) => {
               const isActive = filters.category === cat.value;
               return (
@@ -216,35 +216,6 @@ export default function Filters({
             })}
           </div>
         </div>
-
-        {/* User profile integrated inside the same card, with top divider */}
-        {userProfile && (
-          <div className="border-t border-gray-100 pt-5 mt-2 space-y-4">
-            <div className="flex items-center space-x-3 pb-3 border-b border-gray-100">
-              <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-[#EE0033] shrink-0">
-                <User size={20} />
-              </div>
-              <div className="overflow-hidden">
-                <h3 className="text-sm font-bold text-gray-800 truncate">{userProfile.name}</h3>
-                <p className="text-[11px] text-gray-500 font-medium truncate">{userProfile.email}</p>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-red-50 to-orange-50/50 p-4 rounded-xl border border-red-100/50">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center text-gray-600">
-                  <span className="text-[11px] font-bold uppercase tracking-wider">Điểm đổi quà Loyalty</span>
-                </div>
-              </div>
-              <div className="mt-2 flex items-baseline space-x-1">
-                <span className="text-2xl font-black text-[#EE0033] tracking-tight">
-                  {userProfile.points.toLocaleString("vi-VN")}
-                </span>
-                <span className="text-[10px] font-bold text-[#EE0033] uppercase">điểm</span>
-              </div>
-            </div>
-          </div>
-        )}
 
       </div>
     </div>
