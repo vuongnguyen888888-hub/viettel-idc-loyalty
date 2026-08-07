@@ -250,8 +250,8 @@ export default function App() {
               {/* Right Side: Title, Gift cards, Pagination */}
               <div className="lg:col-span-3 space-y-6">
 
-                {/* Hot banner above the dining voucher cards */}
-                {(filters.category === "Tất cả" || filters.category === "Ăn uống") && (
+                {/* Hot banner - displayed ONLY when selecting the 'Ưu đãi hot' tab menu (category === 'Tất cả') */}
+                {filters.category === "Tất cả" && (
                   <div className="bg-gradient-to-r from-[#EE0033] via-red-600 to-orange-600 rounded-2xl py-3 px-4 md:py-3.5 md:px-5 text-white shadow-md relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-3 border border-red-500/20">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_60%)] pointer-events-none"></div>
                     <div className="absolute -left-10 -bottom-10 w-40 h-40 rounded-full bg-orange-400/20 blur-2xl pointer-events-none"></div>
