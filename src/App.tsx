@@ -81,20 +81,26 @@ export default function App() {
         return false;
       }
       if (
-        filters.priceRange === "Từ 50.000 điểm đến 500.000 điểm" &&
+        filters.priceRange === "Từ 50.000 - 500.000 điểm" &&
         (gift.points < 50000 || gift.points > 500000)
       ) {
         return false;
       }
       if (
-        filters.priceRange === "Từ 500.000 điểm đến 1.000.000 điểm" &&
+        filters.priceRange === "Từ 500.000 - 1.000.000 điểm" &&
         (gift.points < 500000 || gift.points > 1000000)
       ) {
         return false;
       }
       if (
-        filters.priceRange === "Từ 1.000.000 điểm đến 5.000.000 điểm" &&
-        (gift.points < 1000000 || gift.points > 5000000)
+        filters.priceRange === "Từ 1.000.000 - 3.000.000 điểm" &&
+        (gift.points < 1000000 || gift.points > 3000000)
+      ) {
+        return false;
+      }
+      if (
+        filters.priceRange === "Từ 3.000.000 - 5.000.000 điểm" &&
+        (gift.points < 3000000 || gift.points > 5000000)
       ) {
         return false;
       }
