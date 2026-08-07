@@ -77,16 +77,28 @@ export default function App() {
     }
     // 5.4 Khoảng giá
     if (filters.priceRange !== "Tất cả") {
-      if (filters.priceRange === "Dưới 2.000 điểm" && gift.points >= 2000) {
+      if (filters.priceRange === "Dưới 50.000 điểm" && gift.points >= 50000) {
         return false;
       }
       if (
-        filters.priceRange === "Từ 2.000 - 5.000 điểm" &&
-        (gift.points < 2000 || gift.points > 5000)
+        filters.priceRange === "Từ 50.000 điểm đến 500.000 điểm" &&
+        (gift.points < 50000 || gift.points > 500000)
       ) {
         return false;
       }
-      if (filters.priceRange === "Trên 5.000 điểm" && gift.points <= 5000) {
+      if (
+        filters.priceRange === "Từ 500.000 điểm đến 1.000.000 điểm" &&
+        (gift.points < 500000 || gift.points > 1000000)
+      ) {
+        return false;
+      }
+      if (
+        filters.priceRange === "Từ 1.000.000 điểm đến 5.000.000 điểm" &&
+        (gift.points < 1000000 || gift.points > 5000000)
+      ) {
+        return false;
+      }
+      if (filters.priceRange === "Trên 5.000.000 điểm" && gift.points <= 5000000) {
         return false;
       }
     }
@@ -234,9 +246,9 @@ export default function App() {
 
                 {/* Hot banner above the dining voucher cards */}
                 {(filters.category === "Tất cả" || filters.category === "Ăn uống") && (
-                  <div className="bg-gradient-to-r from-[#EE0033] to-amber-500 rounded-2xl py-3 px-4 md:py-3.5 md:px-5 text-white shadow-md relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-3 border border-red-500/20">
+                  <div className="bg-gradient-to-r from-[#EE0033] via-red-600 to-orange-600 rounded-2xl py-3 px-4 md:py-3.5 md:px-5 text-white shadow-md relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-3 border border-red-500/20">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_60%)] pointer-events-none"></div>
-                    <div className="absolute -left-10 -bottom-10 w-40 h-40 rounded-full bg-yellow-400/10 blur-2xl pointer-events-none"></div>
+                    <div className="absolute -left-10 -bottom-10 w-40 h-40 rounded-full bg-orange-400/20 blur-2xl pointer-events-none"></div>
                     
                     <div className="space-y-1 text-center md:text-left relative z-10 flex-1">
                       <div className="inline-flex items-center space-x-1.5 bg-yellow-400/25 backdrop-blur-md text-yellow-100 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider border border-yellow-400/30">

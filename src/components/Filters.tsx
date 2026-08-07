@@ -117,9 +117,11 @@ export default function Filters({
 
   const priceOptions = [
     { value: "Tất cả", label: "Mọi mức điểm" },
-    { value: "Dưới 2.000 điểm", label: "Dưới 2.000 điểm" },
-    { value: "Từ 2.000 - 5.000 điểm", label: "Từ 2.000 - 5.000 điểm" },
-    { value: "Trên 5.000 điểm", label: "Trên 5.000 điểm" },
+    { value: "Dưới 50.000 điểm", label: "Dưới 50.000 điểm" },
+    { value: "Từ 50.000 điểm đến 500.000 điểm", label: "Từ 50.000 điểm đến 500.000 điểm" },
+    { value: "Từ 500.000 điểm đến 1.000.000 điểm", label: "Từ 500.000 điểm đến 1.000.000 điểm" },
+    { value: "Từ 1.000.000 điểm đến 5.000.000 điểm", label: "Từ 1.000.000 điểm đến 5.000.000 điểm" },
+    { value: "Trên 5.000.000 điểm", label: "Trên 5.000.000 điểm" },
   ];
 
   const isSearchActive = filters.searchQuery !== "";
